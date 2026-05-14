@@ -1,0 +1,21 @@
+name: 'dbt_examplecore'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_examplecore' # Certifique-se que este nome é o mesmo que está dentro do seu profiles.yml
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_examplecore:
+    example:
+      +materialized: view
